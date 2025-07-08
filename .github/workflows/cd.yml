@@ -1,0 +1,51 @@
+name: Continuous Delivery & Deployment
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: "Target deployment environment"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    name: Build & Deploy to Kubernetes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Kubernetes CLI (kubectl)
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Validate Kubernetes Manifests
+        run: |
+          kubectl apply --dry-run=client -f k8s/00-namespace.yaml
+          kubectl apply --dry-run=client -f k8s/01-configmaps-secrets.yaml
+          kubectl apply --dry-run=client -f k8s/02-postgres.yaml
+          kubectl apply --dry-run=client -f k8s/03-redis.yaml
+          kubectl apply --dry-run=client -f k8s/04-kafka.yaml
+          kubectl apply --dry-run=client -f k8s/05-backend.yaml
+          kubectl apply --dry-run=client -f k8s/06-frontend.yaml
+          kubectl apply --dry-run=client -f k8s/07-ingress.yaml
+
+      - name: Deployment Summary
+        run: |
+          echo "=================================================="
+          echo "Deployment pipeline configured successfully."
+          echo "All K8s manifests verified dry-run=client."
+          echo "Ready to link with Azure Container Registry (ACR)"
+          echo "and Azure Kubernetes Service (AKS) credentials."
+          echo "=================================================="
