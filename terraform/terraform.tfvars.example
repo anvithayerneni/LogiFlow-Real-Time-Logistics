@@ -1,0 +1,7 @@
+project_name      = "logiflow"
+environment       = "prod"
+location          = "eastus2"
+aks_node_count    = 3
+aks_vm_size       = "Standard_D4s_v5"
+db_admin_username = "psqladmin"
+db_admin_password = "ChangeThisPassword123!Safe"
