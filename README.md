@@ -14,6 +14,23 @@ An enterprise-grade, event-driven real-time food delivery and logistics platform
 
 ---
 
+## 🌐 Live Cloud Deployment & Interactive Demo
+
+| Service | Access Link | Description |
+|---|---|---|
+| **🌐 Live Web Application** | **[corn-fifty-wed-role.trycloudflare.com](https://corn-fifty-wed-role.trycloudflare.com)** | Full public production UI with 1-click Demo Role Switcher |
+| **📍 Live GPS Map Tracking** | **[Live Tracking Showcase](https://corn-fifty-wed-role.trycloudflare.com/customer/orders/f19b8d92-9a0f-4fe1-baf7-53a58f6e7d9b)** | Interactive Leaflet tracking with live vehicle animation & dynamic ETA |
+| **🛵 Driver Transit Cockpit** | **[Courier GPS Simulator](https://corn-fifty-wed-role.trycloudflare.com/driver/deliveries/f19b8d92-9a0f-4fe1-baf7-53a58f6e7d9b)** | Simulated GPS vehicle driving broadcast over WebSockets |
+| **👨‍🍳 Kitchen Kanban Board** | **[Restaurant Orders Flow](https://corn-fifty-wed-role.trycloudflare.com/restaurant/orders)** | Real-time order progression and menu catalog management |
+| **📊 Operations Analytics** | **[Admin Intelligence Portal](https://corn-fifty-wed-role.trycloudflare.com/admin)** | Recharts revenue metrics, active fleet logs, and user control |
+| **📚 Interactive Swagger API** | **[FastAPI OpenAPI Docs](http://localhost:8000/docs)** | Direct test bench for REST endpoints and schemas |
+
+### 🎬 Live Telematics & Dispatch Walkthrough
+
+![Real-Time Delivery & Logistics Platform Live Demo](docs/demo.gif)
+
+---
+
 ## 📑 Table of Contents
 
 - [Architectural Overview](#-architectural-overview)
