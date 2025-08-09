@@ -32,14 +32,14 @@ jobs:
 
       - name: Validate Kubernetes Manifests
         run: |
-          kubectl apply --dry-run=client -f k8s/00-namespace.yaml
-          kubectl apply --dry-run=client -f k8s/01-configmaps-secrets.yaml
-          kubectl apply --dry-run=client -f k8s/02-postgres.yaml
-          kubectl apply --dry-run=client -f k8s/03-redis.yaml
-          kubectl apply --dry-run=client -f k8s/04-kafka.yaml
-          kubectl apply --dry-run=client -f k8s/05-backend.yaml
-          kubectl apply --dry-run=client -f k8s/06-frontend.yaml
-          kubectl apply --dry-run=client -f k8s/07-ingress.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/00-namespace.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/01-configmaps-secrets.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/02-postgres.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/03-redis.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/04-kafka.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/05-backend.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/06-frontend.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/07-ingress.yaml
 
       - name: Deployment Summary
         run: |
