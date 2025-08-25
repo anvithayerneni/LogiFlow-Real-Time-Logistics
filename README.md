@@ -1,6 +1,6 @@
-# LogiFlow
+# LogiFlow: Real-Time Logistics
 
-[![CI](https://github.com/anvithayerneni/logiflow/actions/workflows/ci.yml/badge.svg)](https://github.com/anvithayerneni/logiflow/actions/workflows/ci.yml)
+[![CI](https://github.com/anvithayerneni/LogiFlow-Real-Time-Logistics/actions/workflows/ci.yml/badge.svg)](https://github.com/anvithayerneni/LogiFlow-Real-Time-Logistics/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 LogiFlow is a real-time food delivery and logistics platform with live GPS driver tracking, event streaming, and role-based dashboards. 
@@ -92,8 +92,8 @@ Order and delivery transitions are enforced with strict validation:
 Runs PostgreSQL, Redis, Kafka, the FastAPI backend, the Next.js frontend, Prometheus, and Grafana:
 
 ```bash
-git clone https://github.com/anvithayerneni/logiflow.git
-cd logiflow
+git clone https://github.com/anvithayerneni/LogiFlow-Real-Time-Logistics.git
+cd LogiFlow-Real-Time-Logistics
 cp .env.example .env
 docker-compose up --build
 ```
