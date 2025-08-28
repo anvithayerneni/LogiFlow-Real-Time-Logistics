@@ -21,6 +21,7 @@ The backend is built with FastAPI, PostgreSQL, and SQLAlchemy 2.0 Async, using A
 | [Kitchen Order Board](https://corn-fifty-wed-role.trycloudflare.com/restaurant/orders) | Kitchen ticket workflow (confirm, cook, mark ready) |
 | [Admin Analytics](https://corn-fifty-wed-role.trycloudflare.com/admin) | Revenue charts, active driver monitor, and order history |
 | [API Documentation](http://localhost:8000/docs) | Interactive Swagger docs for all REST endpoints |
+| [System Architecture & Spec](docs/SYSTEM_DOCUMENTATION.md) | In-depth engineering guide, ER diagrams, state machines, and algorithms |
 | [Demo Video (MP4)](docs/full_platform_demo.mp4) | Downloadable 720p HD walkthrough video |
 
 ---
