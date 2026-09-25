@@ -1,0 +1,28 @@
+services:
+  # 1. FastAPI Backend Web Service (Free Tier)
+  - type: web
+    name: logistics-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt && python backend/app/seed.py"
+    startCommand: "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./logistics.db
+
+  # 2. Next.js Frontend Web Service (Free Tier)
+  - type: web
+    name: logistics-frontend
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: "cd frontend && npm install && npm run build"
+    startCommand: "cd frontend && npm run start -- -p $PORT"
+    envVars:
+      - key: NODE_ENV
+        value: production
