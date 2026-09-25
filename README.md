@@ -25,9 +25,18 @@ An enterprise-grade, event-driven real-time food delivery and logistics platform
 | **📊 Operations Analytics** | **[Admin Intelligence Portal](https://corn-fifty-wed-role.trycloudflare.com/admin)** | Recharts revenue metrics, active fleet logs, and user control |
 | **📚 Interactive Swagger API** | **[FastAPI OpenAPI Docs](http://localhost:8000/docs)** | Direct test bench for REST endpoints and schemas |
 
-### 🎬 Live Telematics & Dispatch Walkthrough
+### 🎬 Full End-to-End Stakeholders Demo Video
 
-![Real-Time Delivery & Logistics Platform Live Demo](docs/demo.gif)
+![Full Platform Stakeholder Demo Walkthrough](docs/full_platform_demo.gif)
+
+> 📹 **High-Definition Video File:** Download or play the [720p HD MP4 Video](docs/full_platform_demo.mp4) directly from the repository.
+
+#### 👥 Stakeholder Perspectives Demonstrated:
+1. **System Architect:** Event-driven microservices topology, FastAPI ASGI async engine, dual-engine PostgreSQL/SQLite fallback, Kafka 12-topic broker, and Redis geospatial index.
+2. **End Customer:** Menu discovery, shopping cart checkout, and showcase real-time Leaflet tracking with live vehicle motion and dynamic ETA countdown.
+3. **Restaurant Kitchen Manager:** Real-time incoming ticket Kanban board, elapsed preparation timers, and automated dispatch triggers (`Confirm` ➔ `Prepare` ➔ `Ready for Pickup`).
+4. **Courier / Delivery Driver:** Mobile dispatch cockpit, guaranteed payouts ($18.50), live GPS telemetry simulator (speed, bearing, lat/lng coordinates), and drop-off settlement.
+5. **System Administrator & Dispatch Operations:** Real-time platform revenue analytics, Recharts order velocity histograms, active fleet monitoring, and Prometheus telemetry.
 
 ---
 
