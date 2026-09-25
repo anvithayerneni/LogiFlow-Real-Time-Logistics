@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: logiflow-ingress
+  namespace: logiflow
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/websocket-services: "logiflow-backend"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: app.logiflow.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: logiflow-frontend
+                port:
+                  number: 3000
+    - host: api.logiflow.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: logiflow-backend
+                port:
+                  number: 8000

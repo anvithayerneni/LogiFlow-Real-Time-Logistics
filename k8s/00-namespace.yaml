@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: logiflow
+  labels:
+    app.kubernetes.io/name: logiflow
+    app.kubernetes.io/part-of: real-time-delivery-logistics-platform
